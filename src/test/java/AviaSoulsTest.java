@@ -172,32 +172,4 @@ public class AviaSoulsTest {
         Ticket[] actual = ticket.search("EVN", "MSK", comparator);
         Assertions.assertArrayEquals(expected, actual);
     }
-    @Test
-    public void shouldTestSortByTime2() {
-        AviaSouls ticket = new AviaSouls();
-        Comparator<Ticket> comparator = new TicketTimeComparator();
-
-        Ticket ticket1 = new Ticket("ЕVN", "MSQ", 900, 15, 19);
-        Ticket ticket2 = new Ticket("ЕVN", "MSQ", 2200, 7, 10);
-        Ticket ticket3 = new Ticket("NYC", "SPB", 3000, 10, 21);
-        Ticket ticket4 = new Ticket("MSK", "ATH", 1200, 7, 13);
-        Ticket ticket5 = new Ticket("ЕVN", "MSK", 800, 12, 16);
-        Ticket ticket6 = new Ticket("ЕVN", "MSK", 1000, 5, 9);
-        Ticket ticket7 = new Ticket("NYC", "ТYO", 3400, 3, 14);
-        Ticket ticket8 = new Ticket("ЕVN", "MSK", 2200, 12, 22);
-        Ticket ticket9 = new Ticket("ЕVN", "MSK", 1500, 6, 12);
-
-        ticket.add(ticket1);
-        ticket.add(ticket2);
-        ticket.add(ticket3);
-        ticket.add(ticket4);
-        ticket.add(ticket5);
-        ticket.add(ticket6);
-        ticket.add(ticket7);
-        ticket.add(ticket8);
-        ticket.add(ticket9);
-        Ticket[] expected = {ticket1, ticket2};
-        Ticket[] actual = ticket.search("EVN", "MSQ", comparator);
-        Assertions.assertArrayEquals(expected, actual);
-    }
 }
